@@ -11,7 +11,7 @@ if not api_key:
 client = OpenAI(api_key=api_key)
 
 # Streamlit app title
-st.title("Posture Analysis from Video")
+st.title("Interview Analysis")
 
 # Upload video file
 uploaded_file = st.file_uploader("Upload a video file", type=["mp4"])
