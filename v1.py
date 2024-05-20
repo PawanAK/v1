@@ -5,18 +5,14 @@ import os
 from openai import OpenAI
 
 # Initialize OpenAI client
-from dotenv import load_dotenv
-
-load_dotenv()
-api_key = os.getenv("OPENAI_API_KEY")
-
+api_key = st.secrets["OPENAI_API_KEY"]
 if not api_key:
-    st.error("Please set the OPENAI_API_KEY environment variable.")
+    st.error("Please set the OPENAI_API_KEY in Streamlit secrets.")
     st.stop()
 client = OpenAI(api_key=api_key)
 
 # Streamlit app title
-st.title("Interview Analysis")
+st.title("Posture Analysis from Video")
 
 # Upload video file
 uploaded_file = st.file_uploader("Upload a video file", type=["mp4"])
